@@ -18,18 +18,18 @@ let str="hello world"
 
 let x=[...str]
 let count=0
-let constant=0
+let constants=0
 for(let i=0;i<str.length;i++){
     if("aeiou".includes(x[i])){
         count=count+1
     }
     else{
-        constant=constant+1
+        constant=constants+1
     }
     
 }
 console.log(count)
-console.log(constant)
+console.log(constants)
 
 
 
