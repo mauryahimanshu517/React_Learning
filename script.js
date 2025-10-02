@@ -31,10 +31,21 @@
 // console.log(count)
 // console.log(constant)
 
-let str = "heloo I'm from India";
+// let str = "heloo I'm from India";
 
 
-console.log(str.split(" ").slice(0,2).join(" "))
+// console.log(str.split(" ").slice(0,2).join(" "))
+
+ let a=4
+
+ for(let i=2;i<a;i++){
+    if(a%1==0 && a%i==0 ){
+        console.log(a)
+    }
+    else{
+        // console.log(i)
+    }
+ }
 
 
 
