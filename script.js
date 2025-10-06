@@ -1,3 +1,4 @@
+
 // let inputBaseNumber=2
 // let inputPowerNumber=3
 
@@ -12,6 +13,7 @@
 
 // exponent(inputBaseNumber,inputPowerNumber)
 
+// =======================
 //Voewl and consonent
 
 // let str="hello world"
@@ -31,21 +33,48 @@
 // console.log(count)
 // console.log(constant)
 
+// ======================
+
 // let str = "heloo I'm from India";
 
 
 // console.log(str.split(" ").slice(0,2).join(" "))
+// ==================prime
+//  let a=4
 
- let a=4
+//  for(let i=2;i<a;i++){
+//     if(a%1==0 && a%i==0 ){
+//         console.log(a)
+//     }
+//     else{
+//         // console.log(i)
+//     }
+//  }
 
- for(let i=2;i<a;i++){
-    if(a%1==0 && a%i==0 ){
-        console.log(a)
+// =================count and return number of sentence
+
+let str="Hello my name is %%$ xyz "
+// console.log(str.split(" "))//split will do this  [ 'hello', 'my', 'name', 'is', 'xyz' ] it will store i arrary
+//  and if we want to found first sentence do this str.split(" ")[0].
+let split=str.split(" ")
+let newSplit=[]
+
+
+for(let i=0;i<split.length;i++){
+    if(split[i]==""  || (/[^a-zA-Z]/.test(split[i]))){
+        console.log(split[i].includes("!@#$%^&*()"))
     }
     else{
-        // console.log(i)
+        newSplit.push(split[i])
+      
     }
- }
+}
+console.log(newSplit)
+
+console.log(newSplit.length)
+
+
+
 
 
 
