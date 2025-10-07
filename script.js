@@ -53,25 +53,47 @@
 
 // =================count and return number of sentence
 
-let str="Hello my name is %%$ xyz "
-// console.log(str.split(" "))//split will do this  [ 'hello', 'my', 'name', 'is', 'xyz' ] it will store i arrary
-//  and if we want to found first sentence do this str.split(" ")[0].
-let split=str.split(" ")
-let newSplit=[]
+// let str="Hello my name is %%$ xyz "
+// // console.log(str.split(" "))//split will do this  [ 'hello', 'my', 'name', 'is', 'xyz' ] it will store i arrary
+// //  and if we want to found first sentence do this str.split(" ")[0].
+// let split=str.split(" ")
+// let newSplit=[]
 
 
-for(let i=0;i<split.length;i++){
-    if(split[i]==""  || (/[^a-zA-Z]/.test(split[i]))){
-        console.log(split[i].includes("!@#$%^&*()"))
-    }
-    else{
-        newSplit.push(split[i])
+// for(let i=0;i<split.length;i++){
+//     if(split[i]==""  || (/[^a-zA-Z]/.test(split[i]))){
+//         console.log(split[i].includes("!@#$%^&*()"))
+//     }
+//     else{
+//         newSplit.push(split[i])
       
-    }
-}
-console.log(newSplit)
+//     }
+// }
+// console.log(newSplit)
 
-console.log(newSplit.length)
+// console.log(newSplit.length)
+
+// ===================== swapping a number
+
+// let a=10
+// let b=20
+
+// let temp=""
+
+// temp=a
+// a=b
+// b=temp
+
+// console.log(a,b)
+
+// let a=10
+// let b=20
+
+// a=a+b
+// b=a-b
+// a=a-b
+
+// console.log(a,b)
 
 
 
