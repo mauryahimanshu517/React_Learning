@@ -28,7 +28,7 @@
 //     else{
 //         constant=constant+1
 //     }
-    
+
 // }
 // console.log(count)
 // console.log(constant)
@@ -66,7 +66,7 @@
 //     }
 //     else{
 //         newSplit.push(split[i])
-      
+
 //     }
 // }
 // console.log(newSplit)
@@ -99,30 +99,57 @@
 
 // 153=1^3+5^3+3^3=1+125+27=153
 
-let number="153"
-console.log(number.split("")[0])
+// let number="153"
+// console.log(number.split("")[0])
 
-let result=0
-let arr=[]
-for(let i=0;i<number.length;i++){
-    let mul=1
-    let x=number.split("")[i]   
-    for(let j=0;j<3;j++){
-        mul*=x
-    }
-    arr.push(mul)
-}
+// let result=0
+// let arr=[]
+// for(let i=0;i<number.length;i++){
+//     let mul=1
+//     let x=number.split("")[i]   
+//     for(let j=0;j<3;j++){
+//         mul*=x
+//     }
+//     arr.push(mul)
+// }
 
-for(let y=0;y<3;y++){
-    result+=arr[y]
-}
-console.log(result)
+// for(let y=0;y<3;y++){
+//     result+=arr[y]
+// }
+// console.log(result)
 
 // let sum=0
 // for(let x=0;x<arr.length;x++){
 //     sum=sum+arr[x]
 // }
 // console.log(sum)
+
+// ===================
+
+// Take a number form 1--N and which number is disible by 3 replace it with Fizz and if it is disible by 5 replace with BUz if disible by both FizzBuzz
+
+let number = 30
+let arr = []
+
+
+for (let i = 1; i <=number; i++) {
+    if (i%3 ==0 && i%5==0) {
+        arr.push("Fizz Buzz")
+    }
+    else if(i % 5 == 0){
+        arr.push("Buzz")
+    }
+    else if(i%3 === 0){
+        arr.push("Fizz")
+    }
+    else{
+        arr.push(i)
+    }
+}
+
+console.log(arr)
+
+
 
 
 
