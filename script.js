@@ -128,26 +128,75 @@
 
 // Take a number form 1--N and which number is disible by 3 replace it with Fizz and if it is disible by 5 replace with BUz if disible by both FizzBuzz
 
-let number = 30
-let arr = []
+// let number = 30
+// let arr = []
 
 
-for (let i = 1; i <=number; i++) {
-    if (i%3 ==0 && i%5==0) {
-        arr.push("Fizz Buzz")
-    }
-    else if(i % 5 == 0){
-        arr.push("Buzz")
-    }
-    else if(i%3 === 0){
-        arr.push("Fizz")
-    }
-    else{
-        arr.push(i)
-    }
-}
+// for (let i = 1; i <=number; i++) {
+//     if (i%3 ==0 && i%5==0) {
+//         arr.push("Fizz Buzz")
+//     }
+//     else if(i % 5 == 0){
+//         arr.push("Buzz")
+//     }
+//     else if(i%3 === 0){
+//         arr.push("Fizz")
+//     }
+//     else{
+//         arr.push(i)
+//     }
+// }
 
-console.log(arr)
+// console.log(arr)
+
+// ============================ praymiad
+
+// let x=5
+
+// for(let i=1;i<=x;i++){
+//     let space=""
+//     for(let j=1;j<=x-i;j++){
+//         space=space+" "
+//     }
+//     for(let y=1;y<=i;y++){
+//         space=space+y
+//     }
+//     for(let a=1;a<i;a++){
+//         space=space+a
+//     }
+//     console.log(space)
+// }
+
+// let str = "hello world";
+// let result = {};
+
+////count the character
+
+// for (let char of str) {
+//     let regex = new RegExp(char, "g"); 
+//     console.log(regex)
+//     let count = (char.match(regex) || " ").length;
+//     result[char] = count;
+
+// }
+
+// console.log(result);
+
+// let str = "hello world";
+// let result = {};
+
+// for (let char of str) {
+//     if (char !== " ") { // skip spaces if you want
+//         result[char] = (result[char] || 0) + 1;
+//     }
+// }
+
+// console.log(result);
+
+
+
+
+
 
 
 
