@@ -3,7 +3,7 @@ import { DataContext } from '../context/DataContext'
 import Brand from './Brand'
 import PriceRange from './PriceRange'
 
-function FilterSection({search,setSearch,handleBrandChange,handleCategoryChange,category,setCategory,brand,setBrand,priceRange,setPriceRange}) {
+function FilterSection({search,setSearch,handleBrandChange,handleCategoryChange,resetAll,category,setCategory,brand,setBrand,priceRange,setPriceRange}) {
   const { data, fetchAllProduct } = useContext(DataContext)
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function FilterSection({search,setSearch,handleBrandChange,handleCategoryChange,
       </div>
       
         <Brand brand={brand} setBrand={setBrand} handleBrandChange={handleBrandChange}  />
-        <PriceRange priceRange={priceRange} setPriceRange={setPriceRange} />
+        <PriceRange priceRange={priceRange} setPriceRange={setPriceRange} setCategory={setCategory} resetAll={resetAll} />
     </div>
   )
 }

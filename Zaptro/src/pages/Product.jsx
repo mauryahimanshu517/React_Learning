@@ -3,18 +3,64 @@ import { DataContext } from '../context/DataContext'
 import FilterSection from '../component/FilterSection'
 import Loading from "../assets/Loading.webm"
 import ProductCard from '../component/ProductCard'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function Product() {
-  console.log("hello ")
   const { data, fetchAllProduct } = useContext(DataContext)
-  const [search,setSearch]=useState("")
-  const [category,setCategory]=useState("All")
-  const [brand,setBrand]=useState("All")
-  const [priceRange,setPriceRange]=useState([0,5000])
+  const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState("")
+  const [category, setCategory] = useState("All")
+  const [brand, setBrand] = useState("All")
+  const [priceRange, setPriceRange] = useState([0, 200])
+  const itemsPerPage = 12;
+
 
   useEffect(() => {
     fetchAllProduct()
   }, [])
+
+  const handleBrandChange = (e) => {
+    setBrand(e.target.value)
+    console.log(e.target.value)
+  }
+
+  const resetAll = () => {
+    setCategory("All")
+    setBrand("All")
+    setPriceRange([0, 200])
+  }
+
+  const handleCategoryChange = (e) => {
+    setCurrentPage(1)
+
+    if (e.target.value === category) {
+
+      setCategory("All")
+    }
+    else {
+
+      setCategory(e.target.value);
+    }
+
+
+  }
+
+
+  const filterData = data?.filter((item) =>
+    item.title.toLowerCase().includes(search.toLowerCase()) &&
+    (category === "All" || item.category === category) &&
+    (brand === "All" || item.brand === brand) &&
+    item.price >= priceRange[0] && item.price <= priceRange[1]
+
+  );
+
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filterData?.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = data ? Math.ceil(filterData.length / itemsPerPage) : "";
+
 
 
   return (
@@ -23,24 +69,77 @@ function Product() {
         {
           data?.length > 0 ? (
             <div className="flex gap-8">
-              <FilterSection search={search} setSearch={setSearch} brand={brand} setBrand={setBrand} category={category} priceRange={priceRange}  />
-             <div className="grid grid-cols-4">
-               {
-                data?.map((product, index) => {
-                  return <ProductCard key={index} product={product}/>
+              <FilterSection
+                handleCategoryChange={handleCategoryChange}
+                resetAll={resetAll}
+                handleBrandChange={handleBrandChange}
+                search={search}
+                setSearch={setSearch}
+                brand={brand}
+                setBrand={setBrand}
+                category={category}
+                setCategory={setCategory}
+                priceRange={priceRange}
+                setPriceRange={setPriceRange}
+              />
+              <div className="grid grid-cols-4 mt-10 h-10 gap-4">
+                {filterData.length > 0 ? (
+                  currentItems.map((product, index) => (
+                    <ProductCard key={index} product={product} />
 
-                })
-              }
-             </div>
-            </div>) : (<div className="flex items-center justify-center h-[400px]">
+                  ))
+                ) : (
+                  <div className="flex justify-center  items-center h-screen">
+                    <DotLottieReact
+                      src="https://lottie.host/86108da4-187a-456c-b681-0c25849123dd/aEvtF2tJOb.lottie"
+                      loop
+                      autoplay
+                    />
+                  </div>
+
+
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-center h-[400px]">
               <video muted autoPlay loop>
-                <source src={Loading} type="video.webm"></source>
+                <source src={Loading} type="video/webm"></source>
               </video>
-            </div>)
+            </div>
+          )
         }
+        <div className="flex justify-center mt-6 gap-2">
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+            className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+          >
+            Prev
+          </button>
+
+          {[...Array(totalPages)].map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentPage(i + 1)}
+              className={`px-3 py-1 rounded ${currentPage === i + 1 ? "bg-blue-500 text-white" : "bg-gray-200"}`}
+            >
+              {i + 1}
+            </button>
+          ))}
+
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage(currentPage + 1)}
+            className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+
+
       </div>
     </>
-
   )
 }
 

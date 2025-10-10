@@ -3,10 +3,12 @@ import { MapPin, } from "lucide-react";
 import { FaCaretDown } from "react-icons/fa"
 import { IoCartOutline } from "react-icons/io5";
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import { useCart } from '../context/CartContext';
 
 
 function Navbar() {
   const location = false
+  const {productItems}=useCart()
   return (
     <div className="bg-white py-3 shadow-2xl">
       <div className="max-w-6xl mx-auto flex justify-between items-center ">
@@ -30,7 +32,7 @@ function Navbar() {
           </ul>
           <Link to="/cart" className="relative">
             <IoCartOutline className="h-7 w-7" />
-            <span className='bg-red-500 px-2 w-6 h-6 rounded-full absolute -top-3 -right-3 text-white '>0</span>
+            <span className='bg-red-500 px-2 w-6 h-6 rounded-full absolute -top-3 -right-3 text-white '>{productItems.length}</span>
           </Link>
           <div>
             <header>
