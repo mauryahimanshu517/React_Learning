@@ -4,9 +4,11 @@ import { useParams } from 'react-router-dom'
 import Breadcrums from '../component/Breadcrums'
 import { IoCartOutline } from 'react-icons/io5'
 import Loading from "../assets/Loading.webm"
+import { useCart } from '../context/CartContext';
 
 function SingleProduct() {
     const params = useParams()
+    const {addToCart}=useCart()
    
     const [SingleProduct, setsingleProduct] = useState("")
     const getSingleProduct = async () => {
