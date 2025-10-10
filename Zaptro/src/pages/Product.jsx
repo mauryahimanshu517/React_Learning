@@ -24,6 +24,11 @@ function Product() {
     console.log(e.target.value)
   }
 
+  const resetAll = () => {
+    setCategory("All")
+    setBrand("All")
+    setPriceRange([0, 200])
+  }
 
   const handleCategoryChange = (e) => {
     setCurrentPage(1)
@@ -34,7 +39,7 @@ function Product() {
     }
     else {
 
-      setCategory(e.target.value); // check
+      setCategory(e.target.value);
     }
 
 
@@ -66,6 +71,7 @@ function Product() {
             <div className="flex gap-8">
               <FilterSection
                 handleCategoryChange={handleCategoryChange}
+                resetAll={resetAll}
                 handleBrandChange={handleBrandChange}
                 search={search}
                 setSearch={setSearch}
