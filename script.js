@@ -182,16 +182,16 @@
 
 // console.log(result);
 
-// let str = "hello world";
-// let result = {};
+let str = "hello world";
+let result = {};
 
-// for (let char of str) {
-//     if (char !== " ") { // skip spaces if you want
-//         result[char] = (result[char] || 0) + 1;
-//     }
-// }
+for (let char of str) {
+    if (char !== " ") { // skip spaces if you want
+        result[char] = (result[char] || 0) + 1;
+    }
+}
 
-// console.log(result);
+console.log(result);
 
 
 
