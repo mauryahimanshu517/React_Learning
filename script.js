@@ -182,30 +182,46 @@
 
 // console.log(result);
 
-let str = "hello world";
-let result = {};
+//cpmaring the letter is alphabaticallly order
 
-for (let char of str) {
-    if (char !== " ") { // skip spaces if you want
-        result[char] = (result[char] || 0) + 1;
-    }
-}
+// let str = "hello world";
+// let result =[];
 
-console.log(result);
+// for (let char of str) {
+//     console.log(char)
+//     if (char !== " ") { // skip spaces if you want
+//         result[char] = (result[char] || 0) + 1;
+//         console.log(result[char] )
+//     }
+// }
 
+// console.log(result);
 
+///////////cpmaring the letter is alphabaticallly order
+// let str="abdct"
 
+// let sort=str.split("").sort().join("")
+// console.log(sort)
 
+// if(str===sort){
+//     console.log("true")
+// }
+// else{
+//     console.log("false")
+// }
 
+//cpmaring the letter is alphabaticallly order
+// let str="abc"
+// let storeValue=""
 
+// let sorting=str.split("").sort().join("")
 
-
-
-
-
-
-
-
+// for(let x of str){
+//     storeValue+=x
+//     if(storeValue===sorting){
+//         console.log("true")
+//     }
+// }
 
 
 
