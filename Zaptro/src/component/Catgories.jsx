@@ -1,9 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { DataContext } from '../context/DataContext'
 
 function Catgories() {
 
-    const { data } = useContext(DataContext)    
+    const { data } = useContext(DataContext)  
+    const [catogoriesData,setcatogoriesData] = useState("null")
+    console.log(catogoriesData)
 
     return (
         <>
@@ -19,6 +21,9 @@ function Catgories() {
                                 <button
                                     key={index}
                                     className="w-40 rounded text-lg bg-white m-2"
+                                    value={category}
+                                    onClick={(e)=>setcatogoriesData(e.target.value)}
+                                    
                                 >
                                     {category.charAt(0).toUpperCase()+category.slice(1,category.length).toLowerCase()}
                                 </button>
