@@ -5,6 +5,8 @@ export const CartContext = createContext("");
 
 export const CartProvider = ({ children }) => {
     const [productItems, getProductItems] = useState([])
+     const [catogoriesData,setcatogoriesData] = useState("null")
+     console.log(catogoriesData)
 
     const deleteProduct = (id) => {
         console.log(id)
@@ -12,6 +14,7 @@ export const CartProvider = ({ children }) => {
         getProductItems(productItems.filter(item => item.id !== id))
 
     };
+
 
     const IncDec = (id, quantity, action) => {
         getProductItems(productItems.map((item) => {
@@ -28,28 +31,6 @@ export const CartProvider = ({ children }) => {
     )
     }
 
-    //     const increment = (price, id, quantity) => {
-
-    //         getProductItems(productItems.map((item) =>
-    //             item.id === id ? { ...item, quantity: quantity + 1 } : item
-    //         ))
-    //     };
-
-    //    const decrement = (price,id, quantity) => {
-    //   if (quantity=== 1) {
-    //     // When quantity will become 0, remove item
-    //     getProductItems(productItems.filter(item => item.id !== id));
-    //   } else {
-    //     // Just reduce quantity
-    //     getProductItems(
-    //       productItems.map((item) =>
-    //         item.id === id
-    //           ? { ...item, quantity: quantity - 1 }
-    //           : item
-    //       )
-    //     );
-    //   }
-    // };
 
 
     const addToCart = (product) => {
@@ -68,7 +49,7 @@ export const CartProvider = ({ children }) => {
 
     return (
         <>
-            <CartContext.Provider value={{ productItems, getProductItems, addToCart, deleteProduct,IncDec }}>
+            <CartContext.Provider value={{ productItems, getProductItems, addToCart, deleteProduct,IncDec,setcatogoriesData,catogoriesData }}>
                 {children}
             </CartContext.Provider>
         </>

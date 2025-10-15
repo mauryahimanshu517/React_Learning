@@ -7,6 +7,7 @@ import Cart from "./pages/Cart"
 import Footer from "./component/Footer"
 import Product from "./pages/Product"
 import SingleProduct from "./pages/SingleProduct"
+import CatogoriesPage from "./pages/CatogoriesPage"
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/catogories/:value" element={<CatogoriesPage />}></Route>
       </Routes>
       
       <Footer/>
