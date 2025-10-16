@@ -8,7 +8,7 @@ import { useCart } from '../context/CartContext';
 
 function Navbar() {
   const location = false
-  const {productItems}=useCart()
+  const { productItems } = useCart()
   return (
     <div className="bg-white py-3 shadow-2xl">
       <div className="max-w-6xl mx-auto flex justify-between items-center ">
@@ -16,11 +16,6 @@ function Navbar() {
           <Link to={"/"}>
             <h1 className="font-bold text-3xl"><span className="text-red-500">Z</span>eptro</h1>
           </Link>
-          <div className="flex gap-1 cursor-pointer text-grey-700 item-center">
-            <MapPin className="text-red-500" />
-            <span className="font-semibold">{location ? <div></div> : "Add Address"}</span>
-            <FaCaretDown />
-          </div>
 
         </div>
         <nav className="flex gap-7 item-center">
@@ -37,10 +32,10 @@ function Navbar() {
           <div>
             <header>
               <SignedOut>
-                <SignInButton className="w-20 h-8 rounded-md text-white bg-red-500"/>
+                <SignInButton className="w-20 h-8 rounded-md text-white bg-red-500" />
               </SignedOut>
               <SignedIn>
-                <UserButton/>
+                <UserButton />
               </SignedIn>
             </header>
           </div>
