@@ -1,3 +1,4 @@
+
 // let inputBaseNumber=2
 // let inputPowerNumber=3
 
@@ -12,9 +13,10 @@
 
 // exponent(inputBaseNumber,inputPowerNumber)
 
+// =======================
 //Voewl and consonent
 
-let str="hello world"
+// let str="hello world"
 
 // let x=[...str]
 // let count=0
@@ -224,46 +226,6 @@ let str="hello world"
 // ----
 
 // sorting the value 
-///anagram
-
-// let str = "hello"
-// let rverseStr = "oxleh"
-
-// let spreadSte = [...str]
-// let revspreadSte = [...rverseStr]
-
-// console.log(spreadSte, revspreadSte)
-
-
-// if (str.length === rverseStr.length) {
-//     let isAnagram = false;
-//     for (let x = 0; x < str.length; x++) {
-
-//         if (spreadSte.includes(revspreadSte[x])) {
-//             isAnagram = true
-//             console.log("from if", isAnagram)
-
-//         }
-//         else {
-//             isAnagram = false
-//             console.log("from else", isAnagram)
-//             break
-
-//         }
-
-
-//     }
-//     if (isAnagram) {
-//         console.log("true")
-//     }
-//     else {
-//         console.log("false")
-//     }
-
-// } else {
-//     console.log('not a anagram')
-// }
-
 
 
 

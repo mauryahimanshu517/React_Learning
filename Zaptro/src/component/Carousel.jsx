@@ -7,6 +7,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 import Catgories from './Catgories';
 
 
+
 function Carousel() {
 
     const { data, fetchAllProduct } = useContext(DataContext)
@@ -18,7 +19,7 @@ function Carousel() {
         const { className, style, onClick } = props;
         return (
             <div onClick={onClick} className={`${className} mx-30`} style={{ zIndex: 3 }}>
-                <AiOutlineArrowLeft className='arrows' style={{ ...style, display: "block", borderRadius: "50px", background: "#f53347", color: "white", postion: "absolute", padding: "2px", left: "50px" }} />
+                <AiOutlineArrowLeft className='arrows' style={{ ...style, display: "block", borderRadius: "50px", background: "#f53347", color: "white", padding: "2px", left: "50px" }} />
 
             </div>
         )
@@ -34,24 +35,22 @@ function Carousel() {
         )
     }
 
-    var settings = {
+    const settings = {
         dots: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow to="next" />,
-        prevArrow: <SamplePrevArrow to="prev" />,
-
+        arrows: true, // keep this true to use custom arrows
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
     };
 
     return (
         <>
             <Slider {...settings} >
                 {
-                    data?.sort(()=> Math.random() -0.5)?.slice(0, 7).map((item, index) => {
+                    data?.sort(() => Math.random() - 0.5)?.slice(0, 7).map((item, index) => {
                         return <div key={index} className='bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10'>
                             <div className="flex gap-10 justify-center h-[600px] item-center px-4 " >
                                 <div className="space-y-6 my-40">
@@ -70,8 +69,8 @@ function Carousel() {
                 }
 
             </Slider>
-            <Catgories/>
-            
+            <Catgories />
+
         </>
     )
 }
