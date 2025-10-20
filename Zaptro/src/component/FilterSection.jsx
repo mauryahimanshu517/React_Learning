@@ -12,7 +12,7 @@ function FilterSection({search,setSearch,handleBrandChange,handleCategoryChange,
 
 
   return (
-    <div className="bg-grey-100 mt-10 p-4 rounded-md h-max">
+    <div className="bg-grey-100 mt-10 p-4 rounded-md h-max md:block hidden">
       <input type="text" value={search} placeholder="search..." onChange={(e)=>setSearch(e.target.value)} className="bg-white p-2  rounded-md border-grey-400 border-2" />
       <h1 className="text-3xl mt-6 text-black-500 font-bold">Category</h1>
       <div >
@@ -31,7 +31,6 @@ function FilterSection({search,setSearch,handleBrandChange,handleCategoryChange,
           }):""
         }
         
-
       </div>
       
         <Brand brand={brand} setBrand={setBrand} handleBrandChange={handleBrandChange}  />

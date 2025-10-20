@@ -4,6 +4,7 @@ import FilterSection from '../component/FilterSection'
 import Loading from "../assets/Loading.webm"
 import ProductCard from '../component/ProductCard'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import MobileFilter from '../component/Mobilefilter'
 
 function Product() {
   const { data, fetchAllProduct } = useContext(DataContext)
@@ -13,6 +14,7 @@ function Product() {
   const [brand, setBrand] = useState("All")
   const [priceRange, setPriceRange] = useState([0, 200])
   const itemsPerPage = 12;
+  const [openFilter, setOpenFilter] = useState(false)
 
 
   useEffect(() => {
@@ -65,6 +67,17 @@ function Product() {
 
   return (
     <>
+      <MobileFilter openFilter={openFilter} setOpenFilter={setOpenFilter} handleCategoryChange={handleCategoryChange}
+        resetAll={resetAll}
+        handleBrandChange={handleBrandChange}
+        search={search}
+        setSearch={setSearch}
+        brand={brand}
+        setBrand={setBrand}
+        category={category}
+        setCategory={setCategory}
+        priceRange={priceRange}
+        setPriceRange={setPriceRange} />
       <div className="max-w-6xl mx-auto px-4 mb-10">
         {
           data?.length > 0 ? (
@@ -82,7 +95,7 @@ function Product() {
                 priceRange={priceRange}
                 setPriceRange={setPriceRange}
               />
-              <div className="grid grid-cols-4 mt-10 h-10 gap-4">
+              <div className="grid md:grid-cols-4 grid-cols-2 mt-10 h-auto gap-4">
                 {filterData.length > 0 ? (
                   currentItems.map((product, index) => (
                     <ProductCard key={index} product={product} />
