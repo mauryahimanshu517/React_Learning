@@ -265,6 +265,22 @@
 //     console.log('not a anagram')
 // }
 
+///pattern printing transpose
+
+const x=[[1,2,3],
+[4,5,6],
+[7,8,9]]
+
+const y=[];
+
+for(let i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        y.push(x[j][i])
+    }
+}
+
+console.log(y)
+
 
 
 
