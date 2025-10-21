@@ -15,7 +15,7 @@ function Navbar() {
   const { productItems } = useCart()
   const [openNav, setopenNav] = useState(false)
   return (
-    <div className="bg-white md:py-3  p-5 shadow-2xl">
+    <div className="bg-white md:py-3 fixed top-0 left-0 right-0 z-999 mb-10 p-5 shadow-2xl">
       <div className="max-w-6xl mx-auto flex justify-between items-center ">
         <div className="flex gap-7 item-center">
           <Link to={"/"}>
