@@ -275,7 +275,7 @@ const y=[];
 
 for(let i=0;i<3;i++){
     for(j=0;j<3;j++){
-        y.push(x[j][i])
+       y[j][i]=x[i][j]
     }
 }
 
