@@ -267,19 +267,19 @@
 
 ///pattern printing transpose
 
-const x=[[1,2,3],
-[4,5,6],
-[7,8,9]]
+// const x=[[1,2,3],
+// [4,5,6],
+// [7,8,9]]
 
-const y=[];
+// const y=[];
 
-for(let i=0;i<3;i++){
-    for(j=0;j<3;j++){
-       y[j][i]=x[i][j]
-    }
-}
+// for(let i=0;i<3;i++){
+//     for(j=0;j<3;j++){
+//        y[j][i]=x[i][j]
+//     }
+// }
 
-console.log(y)
+// console.log(y)
 
 
 
