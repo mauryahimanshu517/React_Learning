@@ -13,10 +13,13 @@ const MobileFilter = ({ openFilter, setOpenFilter, search, setSearch, handleBran
         setOpenFilter(!openFilter)
         fetchAllProduct()
     }
+    console.log("hello")
     console.log(openFilter)
     return (
+        
         <>
-            <div className='bg-gray-100 flex justify-between items-center md:hidden px-4 p-2 mt-5'>
+       
+            <div className='bg-gray-100 flex justify-between items-center md:hidden px-4 p-2 mt-20'>
                 <h1 className='font-semibold text-xl'>Filters</h1>
                 <FaFilter onClick={toggleFilter} className='text-gray-800' />
             </div>

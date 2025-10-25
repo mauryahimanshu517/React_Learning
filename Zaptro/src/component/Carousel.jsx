@@ -52,7 +52,7 @@ function Carousel() {
                 {
                     data?.sort(() => Math.random() - 0.5)?.slice(0, 7).map((item, index) => {
                         return <div key={index} className='bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10'>
-                            <div className="flex flex-col-reverse md:flex-row gap-10 justify-center items-center md:h-[600px] h-[750px] px-4 py-10 bg-gradient-to-b from-gray-900 via-purple-900 to-black">
+                            <div className="flex flex-col-reverse md:flex-row gap-20 justify-center items-center md:h-[700px] h-[750px] px-4 py-10 bg-gradient-to-b from-gray-900 via-purple-900 to-black">
 
                                 {/* Text Section */}
                                 <div className="space-y-6 text-center md:text-left my-5 md:my-40">

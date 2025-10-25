@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext';
 
-function ProductCard({ product }) {
+function  ProductCard({ product }) {
       const navigate = useNavigate(); 
        const {addToCart,productItems}=useCart()
     
