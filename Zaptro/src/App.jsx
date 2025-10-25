@@ -8,28 +8,27 @@ import Footer from "./component/Footer"
 import Product from "./pages/Product"
 import SingleProduct from "./pages/SingleProduct"
 import CatogoriesPage from "./pages/CatogoriesPage"
-
-
+import RazorpayPayment from "./component/RazorpayPayment" // ✅ Import here
 
 function App() {
-  
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/product" element={<Product />}></Route>
-        <Route path="/product/:id" element={<SingleProduct />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/catogories/:value" element={<CatogoriesPage />}></Route>
-      </Routes>
-      
-      <Footer/>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/catogories/:value" element={<CatogoriesPage />} />
 
+        {/* ✅ Add this new route for payment page */}
+        <Route path="/payment" element={<RazorpayPayment />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
