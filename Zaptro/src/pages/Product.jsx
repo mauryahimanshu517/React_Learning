@@ -78,7 +78,7 @@ function Product() {
         setCategory={setCategory}
         priceRange={priceRange}
         setPriceRange={setPriceRange} />
-      <div className="max-w-6xl mx-auto px-4 mb-10">
+      <div className="max-w-6xl mx-auto px-4 mb-10 mt-10">
         {
           data?.length > 0 ? (
             <div className="flex gap-8">
