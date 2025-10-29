@@ -8,7 +8,7 @@ app.use(express.json());
 
 const razorpay = new Razorpay({
   key_id: "rzp_test_RXnL4bSMSuEA6p",
-  key_secret: "YOUR_KEY_SECRET",
+  key_secret: "N8Cx8ZkvyxhQDeNauOx4417F",
 });
 
 app.post("/payment", async (req, res) => {
