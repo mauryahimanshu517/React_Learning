@@ -22,7 +22,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/catogories/:value" element={<CatogoriesPage />} />
-
         {/* ✅ Add this new route for payment page */}
         <Route path="/payment" element={<RazorpayPayment />} />
       </Routes>

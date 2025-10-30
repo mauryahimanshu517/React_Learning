@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 export const CartContext = createContext("");
@@ -17,11 +17,16 @@ export const CartProvider = ({ children }) => {
 
     };
 
-    function totalSum(product) {
-        const total = product.price * (product.quantity || 1);
-        console.log("Running Total:", total);
+    useEffect(() => {
+        const total = productItems.reduce(
+            (sum, item) => sum + item.price * (item.quantity || 1),
+            0
+        );
         setPayment(total);
-    }
+    }, [productItems]);
+
+
+
 
     const IncDec = (id, quantity, action) => {
         // Create the updated array
@@ -71,7 +76,7 @@ export const CartProvider = ({ children }) => {
     return (
         <>
 
-            <CartContext.Provider value={{ productItems, totalSum, payment, getProductItems, addToCart, deleteProduct, IncDec, setcatogoriesData, catogoriesData }}>
+            <CartContext.Provider value={{ productItems, payment, getProductItems, addToCart, deleteProduct, IncDec, setcatogoriesData, catogoriesData }}>
                 {children}
             </CartContext.Provider>
         </>
