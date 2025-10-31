@@ -8,7 +8,7 @@ function ProductCard({ product }) {
 
     const handleBuyNow = () => {
         addToCart(product)
-        totalSum(product);
+        totalSum();
     };
 
     return (

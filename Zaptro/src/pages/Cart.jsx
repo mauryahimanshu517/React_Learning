@@ -90,7 +90,7 @@ function Cart() {
             onClick={handlePayment}
             className="bg-red-500 ml-[45%] m-10 text-white px-5 py-2 rounded-md"
           >
-            Buy Now ₹{payment}
+            Buy Now ₹{Number(payment)}
           </button>
         </div>
       ) : (

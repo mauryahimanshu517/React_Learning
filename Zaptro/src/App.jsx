@@ -8,7 +8,7 @@ import Footer from "./component/Footer"
 import Product from "./pages/Product"
 import SingleProduct from "./pages/SingleProduct"
 import CatogoriesPage from "./pages/CatogoriesPage"
-import RazorpayPayment from "./component/RazorpayPayment" // ✅ Import here
+// import RazorpayPayment from "./component/RazorpayPayment" // ✅ Import here
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/catogories/:value" element={<CatogoriesPage />} />
         {/* ✅ Add this new route for payment page */}
-        <Route path="/payment" element={<RazorpayPayment />} />
+        {/* <Route path="/payment" element={<RazorpayPayment />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
