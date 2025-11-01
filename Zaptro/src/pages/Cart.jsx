@@ -1,16 +1,15 @@
-
 import { useCart } from '../context/CartContext';
 import { FaRegTrashAlt } from 'react-icons/fa';
 
-
 function Cart() {
-  const { productItems, deleteProduct, IncDec,payment} = useCart();
+  const { productItems, deleteProduct, IncDec, payment } = useCart();
 
-  console.log("payment",payment)
+  console.log("payment", payment);
 
   const handlePayment = async () => {
     try {
-      const orderResponse = await fetch("http://localhost:5000/payment", {
+      // Update this URL to match your Render backend's /cart endpoint
+      const orderResponse = await fetch("https://your-render-backend-url.onrender.com/cart", { // Replace with your actual Render backend URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: payment }),
@@ -19,7 +18,7 @@ function Cart() {
       const order = await orderResponse.json();
 
       const options = {
-        key: "rzp_test_RXnL4bSMSuEA6p",
+        key: "rzp_test_RXnL4bSMSuEA6p", // Use your Razorpay test/live key
         amount: order.amount,
         currency: "INR",
         name: "Zaptro Store",
@@ -77,16 +76,13 @@ function Cart() {
                     </div>
                     <span className=" transition-all flex rounded-full p-3 ">
                       <FaRegTrashAlt onClick={() => deleteProduct(item.id)} className="text-red-500 hover:bg-white/60 hover:shadow-2xl text-2xl cursor-pointer mt-5" />
-                      {/* <button onClick={handleBuyNow} className="w-25 rounded h-10 bg-red-500 ml-8 text-white mt-3">Buy Now</button> */}
-
                     </span>
-
                   </div>
                 );
               })}
             </div>
           </div>
-           <button
+          <button
             onClick={handlePayment}
             className="bg-red-500 ml-[45%] m-10 text-white px-5 py-2 rounded-md"
           >

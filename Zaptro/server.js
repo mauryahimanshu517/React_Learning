@@ -1,44 +1,42 @@
 import express from "express";
 import Razorpay from "razorpay";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
-// ✅ Allow both localhost (for testing) and your Netlify domain
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://regal-cuchufli-8bc07f.netlify.app", // your deployed frontend
-    ],
-  })
-);
+// CORS setup to allow requests from your Netlify frontend
+app.use(cors({
+  origin: "https://regal-cuchufli-8bc07f.netlify.app",  // Use your actual Netlify URL
+}));
 
 app.use(express.json());
 
-// ✅ Use environment variables for security
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID || "rzp_test_RXnL4bSMSuEA6p",
-  key_secret: process.env.RAZORPAY_KEY_SECRET || "N8Cx8ZkvyxhQDeNauOx4417F",
+// Simple GET route to check if backend is working
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
 });
 
+// Razorpay payment route
 app.post("/payment", async (req, res) => {
   try {
     const { amount } = req.body;
     const options = {
-      amount: Math.round(amount * 100),
+      amount: Math.round(amount * 100), // Razorpay expects amount in paise
       currency: "INR",
       receipt: `receipt_${Date.now()}`,
     };
 
     const order = await razorpay.orders.create(options);
-    return res.json(order);
+    return res.json(order);  // Send order details back to frontend
   } catch (error) {
-    console.error("❌ Error creating order:", error);
+    console.error("Error creating order:", error);
     return res.status(500).json({ error: "Failed to create Razorpay order" });
   }
 });
 
-// ✅ Use Render's dynamic port
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`));
+app.listen(5000, () => {
+  console.log("✅ Backend running on port 5000");
+});
